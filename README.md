@@ -4,6 +4,7 @@
 
 ## Testing
 
+- golang.org/pkg/testing
 - `*_test.go` for filename, prefix test function with `Test`
 - accept one parameter `t testing.T`
 - same package for whitebox tests (implementation)
@@ -41,3 +42,8 @@
     - `t.Fail()`
     - `t.Error(args ...interface{})`
     - `t.Errorf(format string, args ...interface{})`
+- Log & Logf
+- Helper 
+- Skip, Skipf, SkipNow
+- Run
+- Parallel
