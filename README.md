@@ -25,3 +25,12 @@
   - ... (TODO)
 - test coverage
 - table driven tests
+- reporting test failures
+  - immediate failure (e.g. connect to db for e2e test)
+    - `t.FailNow()`
+    - `t.Fatal(args ...interface{})`
+    - `t.Fatal(format string, args ...interface{})`
+  - non-immediate failure
+    - `t.Fail()`
+    - `t.Error(args ...interface{})`
+    - `t.Errorf(format string, args ...interface{})`
