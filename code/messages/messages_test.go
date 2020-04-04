@@ -1,4 +1,5 @@
-package messages 
+package messages
+
 // same package with test targeting functions
 
 import "testing"
@@ -17,6 +18,24 @@ func TestDepart(t *testing.T) {
 	expect := "Goodbye, Gopher\n"
 	if got != expect {
 		t.Errorf("Did not get expected result. Wanted %q, got: %q\n", expect, got)
+	}
+}
+
+func TestGreetTableDriven(t *testing.T) {
+	scenarios := []struct {
+		input  string
+		expect string
+	}{
+		{input: "Gopher", expect: "Hello, Gopher!\n"},
+		{input: "", expect: "Hello, !\n"},
+		{input: "string", expect: "Hello, string!\n"},
+	}
+
+	for _, s := range scenarios {
+		got := Greet(s.input)
+		if got != s.expect {
+			t.Errorf("Did not get expected result. Input: %q, Wanted %q, got: %q\n", s.input, s.expect, got)
+		}
 	}
 }
 
