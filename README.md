@@ -47,3 +47,27 @@
 - Skip, Skipf, SkipNow
 - Run
 - Parallel
+
+## Benchmark tests
+
+- Prefix tests with `Benchmark`
+- Accept one parameter `*testing.B`
+- key testing.B memebers
+  - `b.N`
+  - `b.StartTimer`, e.g. exclude app startup time
+  - `b.StopTimer`
+  - `b.ResetTimer`
+  - `b.RunParallel`
+- `go test -v -bench . -benchtime 10s`
+- `go test -v -bench . `, by default the benchmark time is 1s
+
+## Profiling tests
+
+- `go test -benchmem`
+- `go test -trace {trace.out}`
+- `go test -{type}profile {file}`, type listed as below
+  - block
+  - cover
+  - cpu
+  - mem
+  - mutex
