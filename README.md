@@ -59,11 +59,13 @@
   - `b.ResetTimer`
   - `b.RunParallel`
 - `go test -v -bench . -benchtime 10s`
+- `go test -v -bench BenchmarkSHA512`, run filtered benches
 - `go test -v -bench . `, by default the benchmark time is 1s
 
 ## Profiling tests
 
 - `go test -benchmem`
+- `go test -v -bench BenchmarkSHA512 -benchme` 
 - `go test -trace {trace.out}`
 - `go test -{type}profile {file}`, type listed as below
   - block
@@ -71,3 +73,5 @@
   - cpu
   - mem
   - mutex
+- `go test -v -bench Alloc -memprofile profile.out`
+  - `go tool pprof profile.out` => `svg` to get memprofile svg diagram
