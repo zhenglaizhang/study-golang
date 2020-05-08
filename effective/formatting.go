@@ -31,3 +31,14 @@ var (
 	outputCount uint32
 	errorCount  uint32
 )
+
+type Reader interface{}
+type Writer interface{}
+type Formatter interface{}
+type CloseNotifier interface{}
+
+func test() {
+	if 1 < 2 {
+
+	}
+}
